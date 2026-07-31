@@ -9,7 +9,7 @@ st.set_page_config(
     page_icon="%"
 )
 
-img = get_base64("images/calc-backdrop.jpeg")
+img = get_base64("Python_Programs/images/calc-backdrop.jpeg")
 st.markdown(
     f"""
     <style>
