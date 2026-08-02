@@ -4,6 +4,12 @@ import os
 def get_base64(image_file):
     with open(image_file, "rb") as f:
         return base64.b64encode(f.read()).decode()
+
+def colored_text(text, color):
+    st.markdown(
+        f"<p style='color:{color};'>{text}</p>",
+            unsafe_allow_html=True
+        )
 st.set_page_config(
     page_title="Percentage Calc",
     page_icon="📊"
@@ -26,34 +32,42 @@ st.markdown(
 language = st.selectbox("Choose preferred language",
                         ["English", "ಕನ್ನಡ", "हिंदी"])
 if language == "English":
-    st.title("Percentage Calc")
-    marks_obtained = st.number_input("Give your marks obtained.(If you want to calculate marks obtained visit my website Quick Calc)", step= 0.5)
-    total_marks = st.number_input("Give your total marks .(If you want to calculate total marks visit my website Quick Calc)", step= 0.5)
+
+    def colored_text(text, color):
+        st.markdown(
+            f"<p style='color:{color};'>{text}</p>",
+            unsafe_allow_html=True
+        )
+
+
+    colored_text("Percentage Calc", "#FFD700")
+    marks_obtained = colored_text("Give your marks obtained.(If you want to calculate marks obtained visit my website Quick Calc)", "#FFD700", step= 0.5)
+    total_marks = colored_text("Give your total marks .(If you want to calculate total marks visit my website Quick Calc)", "#FFD700",  step= 0.5)
     if st.button("% Calculate Percentage") :
         percentage = marks_obtained / total_marks * 100
         if percentage < 100 :
-            st.write(f"You Percentage is {percentage}%")
+            colored_text(f"You Percentage is {percentage}%", "#FFD700")
         else:
-            st.write("Invalid input")
+            colored_text("Invalid Input", "#FFD700")
 elif language == "ಕನ್ನಡ":
-    st.title("ಶೇಕಡಾವಾರು ಕ್ಯಾಲ್ಕುಲೇಟರ್")
-    marks_obtained = st.number_input("ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)", step=1)
-    total_marks = st.number_input("ನಿಮ್ಮ ಒಟ್ಟು ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಒಟ್ಟು ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)", step=1)
+    colored_text("ಶೇಕಡಾವಾರು ಕ್ಯಾಲ್ಕುಲೇಟರ್", "#FFD700")
+    marks_obtained = colored_text("ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)", "#FFD700", step=1)
+    total_marks = colored_text("ನಿಮ್ಮ ಒಟ್ಟು ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಒಟ್ಟು ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)", "#FFD700", step=1)
 
     if st.button("% ಲೆಕ್ಕಾಚಾರ ಮಾಡಿ"):
         percentage = marks_obtained / total_marks * 100
         if percentage < 100 :
-            st.write(f"ನಿಮ್ಮ ಶೇಕಡಾವಾರು {percentage}%")
+            colored_text(f"ನಿಮ್ಮ ಶೇಕಡಾವಾರು {percentage}%", "#FFD700")
         else:
-            st.write("ಅಮಾನ್ಯ ಇನ್‌ಪುಟ್")
+            colored_text("ಅಮಾನ್ಯ ಇನ್‌ಪುಟ್","#FFD700")
 elif language == "हिंदी":
-    st.title("प्रतिशत कैलकुलेटर")
-    marks_obtained = st.number_input("अपने प्राप्त अंक बताएं.(अगर आप अपने प्राप्त अंकों की गणना करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)", step=1)
-    total_marks = st.number_input("अपने कुल अंक बताएं।.(अगर आप कुल अंक कैलकुलेट करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)", step=1)
+    colored_text("प्रतिशत कैलकुलेटर", "#FFD700")
+    marks_obtained = colored_text("अपने प्राप्त अंक बताएं.(अगर आप अपने प्राप्त अंकों की गणना करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)","#FFD700", step=1)
+    total_marks = colored_text("अपने कुल अंक बताएं।.(अगर आप कुल अंक कैलकुलेट करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)","#FFD700", step=1)
 
     if st.button("% गणना"):
         percentage = marks_obtained / total_marks * 100
         if percentage < 100 :
-            st.write(f"आपका प्रतिशत है {percentage}%")
+            colored_text(f"आपका प्रतिशत है {percentage}%","#FFD700")
         else:
-            st.write("अमान्य निवेश")
+            colored_text("अमान्य निवेश","#FFD700")
