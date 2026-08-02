@@ -41,8 +41,8 @@ if language == "English":
 
 
     colored_text("Percentage Calc", "#FFD700")
-    marks_obtained = colored_text("Give your marks obtained.(If you want to calculate marks obtained visit my website Quick Calc)", "#FFD700", step= 0.5)
-    total_marks = colored_text("Give your total marks .(If you want to calculate total marks visit my website Quick Calc)", "#FFD700",  step= 0.5)
+    marks_obtained = st.selectbox(colored_text("Give your marks obtained.(If you want to calculate marks obtained visit my website Quick Calc)", "#FFD700", step= 0.5))
+    total_marks = st.selectbox(colored_text("Give your total marks .(If you want to calculate total marks visit my website Quick Calc)", "#FFD700",  step= 0.5))
     if st.button("% Calculate Percentage") :
         percentage = marks_obtained / total_marks * 100
         if percentage < 100 :
@@ -51,8 +51,8 @@ if language == "English":
             colored_text("Invalid Input", "#FFD700")
 elif language == "ಕನ್ನಡ":
     colored_text("ಶೇಕಡಾವಾರು ಕ್ಯಾಲ್ಕುಲೇಟರ್", "#FFD700")
-    marks_obtained = colored_text("ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)", "#FFD700", step=1)
-    total_marks = colored_text("ನಿಮ್ಮ ಒಟ್ಟು ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಒಟ್ಟು ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)", "#FFD700", step=1)
+    marks_obtained = st.selectbox(colored_text("ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)", "#FFD700", step=0.5))
+    total_marks = st.selectbox(colored_text("ನಿಮ್ಮ ಒಟ್ಟು ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಒಟ್ಟು ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)", "#FFD700", step=0.5))
 
     if st.button("% ಲೆಕ್ಕಾಚಾರ ಮಾಡಿ"):
         percentage = marks_obtained / total_marks * 100
@@ -62,8 +62,8 @@ elif language == "ಕನ್ನಡ":
             colored_text("ಅಮಾನ್ಯ ಇನ್‌ಪುಟ್","#FFD700")
 elif language == "हिंदी":
     colored_text("प्रतिशत कैलकुलेटर", "#FFD700")
-    marks_obtained = colored_text("अपने प्राप्त अंक बताएं.(अगर आप अपने प्राप्त अंकों की गणना करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)","#FFD700", step=1)
-    total_marks = colored_text("अपने कुल अंक बताएं।.(अगर आप कुल अंक कैलकुलेट करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)","#FFD700", step=1)
+    marks_obtained = st.selectbox(colored_text("अपने प्राप्त अंक बताएं.(अगर आप अपने प्राप्त अंकों की गणना करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)","#FFD700", step=0.5))
+    total_marks = st.selectbox(colored_text("अपने कुल अंक बताएं।.(अगर आप कुल अंक कैलकुलेट करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)","#FFD700", step=0.5))
 
     if st.button("% गणना"):
         percentage = marks_obtained / total_marks * 100
