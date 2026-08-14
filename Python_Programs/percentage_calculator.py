@@ -5,11 +5,7 @@ def get_base64(image_file):
     with open(image_file, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-def colored_text(text, color):
-    st.markdown(
-        f"<p style='color:{color};'>{text}</p>",
-            unsafe_allow_html=True
-        )
+
 st.set_page_config(
     page_title="Percentage Calc",
     page_icon="📊"
@@ -29,6 +25,12 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+def colored_text(text, color):
+    st.markdown(
+        f"<p style='color:{color};'>{text}</p>",
+            unsafe_allow_html=True
+        )
+colored_text("TEST GOLD TEXT", "#FFD700")
 language = st.selectbox("Choose preferred language",
                         ["English", "ಕನ್ನಡ", "हिंदी"])
 if language == "English":
