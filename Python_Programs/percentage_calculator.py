@@ -11,7 +11,7 @@ st.set_page_config(
     page_icon="📊"
 )
 
-img = get_base64("Python_Programs/images/calc-backdrop.jpeg")
+img = get_base64("Python_Programs/images/percentage1.jpeg")
 st.markdown(
     f"""
     <style>
@@ -118,7 +118,7 @@ elif language == "हिंदी":
         "अपने कुल अंक बताएं।.(अगर आप कुल अंक कैलकुलेट करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)",
         "#FFD700"
     )
-    total_marks = st.selectbox(
+    total_marks = st.number_input(
         "",
         step=0.5,
         key="total_marks",
