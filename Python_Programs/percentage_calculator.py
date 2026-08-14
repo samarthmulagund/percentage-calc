@@ -41,14 +41,34 @@ if language == "English":
 
 
     colored_text("Percentage Calc", "#FFD700")
-    marks_obtained = st.selectbox(colored_text("Give your marks obtained.(If you want to calculate marks obtained visit my website Quick Calc)", "#FFD700", step= 0.5))
-    total_marks = st.selectbox(colored_text("Give your total marks .(If you want to calculate total marks visit my website Quick Calc)", "#FFD700",  step= 0.5))
+    colored_text(
+        "Give your marks obtained.(If you want to calculate marks obtained visit my website Quick Calc)"
+        "#FFD700"
+    )
+    marks_obtained = st.number_input(
+        "",
+        step=0.5,
+        label_visibility = "collapsed"
+    )
+    colored_text(
+        "Give your total marks .(If you want to calculate total marks visit my website Quick Calc)"
+        "#FFD700"
+    )
+    total_marks = st.number_input(
+        "",
+        step=0.5,
+        label_visibility = "collapsed"
+    )
     if st.button("% Calculate Percentage") :
-        percentage = marks_obtained / total_marks * 100
-        if percentage < 100 :
-            colored_text(f"You Percentage is {percentage}%", "#FFD700")
+        if total_marks > 0:
+            percentage = marks_obtained / total_marks * 100
+            if percentage <= 100 :
+                colored_text(f"You Percentage is {percentage}%", "#FFD700")
+            else:
+                colored_text("Invalid Input", "#FFD700")
         else:
-            colored_text("Invalid Input", "#FFD700")
+            print("Total Marks should be more than 0")
+
 elif language == "ಕನ್ನಡ":
     colored_text("ಶೇಕಡಾವಾರು ಕ್ಯಾಲ್ಕುಲೇಟರ್", "#FFD700")
     marks_obtained = st.selectbox(colored_text("ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)", "#FFD700", step=0.5))
