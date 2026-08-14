@@ -11,7 +11,7 @@ st.set_page_config(
     page_icon="📊"
 )
 
-img = get_base64("Python_Programs/images/percentage1.jpeg")
+img = get_base64("Python_Programs/images/calc-backdrop.jpeg")
 st.markdown(
     f"""
     <style>
