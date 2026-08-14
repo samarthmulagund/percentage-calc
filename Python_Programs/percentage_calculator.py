@@ -33,13 +33,6 @@ language = st.selectbox("Choose preferred language",
                         ["English", "ಕನ್ನಡ", "हिंदी"])
 if language == "English":
 
-    def colored_text(text, color):
-        st.markdown(
-            f"<p style='color:{color};'>{text}</p>",
-            unsafe_allow_html=True
-        )
-
-
     colored_text("Percentage Calc", "#FFD700")
     colored_text(
         "Give your marks obtained.(If you want to calculate marks obtained visit my website Quick Calc)"
