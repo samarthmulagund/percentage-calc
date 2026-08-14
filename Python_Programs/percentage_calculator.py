@@ -30,14 +30,18 @@ def colored_text(text, color):
         f"<p style='color:{color};'>{text}</p>",
             unsafe_allow_html=True
         )
-colored_text("TEST GOLD TEXT", "#FFD700")
-language = st.selectbox("Choose preferred language",
+colored_text(
+    "Choose preferred language",
+    "#FFD700"
+)
+language = st.selectbox("",
                         ["English", "ಕನ್ನಡ", "हिंदी"])
+
 if language == "English":
 
     colored_text("Percentage Calc", "#FFD700")
     colored_text(
-        "Give your marks obtained.(If you want to calculate marks obtained visit my website Quick Calc)"
+        "Give your marks obtained.(If you want to calculate marks obtained visit my website Quick Calc)",
         "#FFD700"
     )
     marks_obtained = st.number_input(
@@ -46,7 +50,7 @@ if language == "English":
         label_visibility = "collapsed"
     )
     colored_text(
-        "Give your total marks .(If you want to calculate total marks visit my website Quick Calc)"
+        "Give your total marks .(If you want to calculate total marks visit my website Quick Calc)",
         "#FFD700"
     )
     total_marks = st.number_input(
@@ -62,7 +66,7 @@ if language == "English":
             else:
                 colored_text("Invalid Input", "#FFD700")
         else:
-            print("Total Marks should be more than 0")
+            print("Total Marks should be more than 0","#FFD700")
 
 elif language == "ಕನ್ನಡ":
     colored_text("ಶೇಕಡಾವಾರು ಕ್ಯಾಲ್ಕುಲೇಟರ್", "#FFD700")
