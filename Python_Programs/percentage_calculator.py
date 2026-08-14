@@ -72,23 +72,65 @@ if language == "English":
 
 elif language == "ಕನ್ನಡ":
     colored_text("ಶೇಕಡಾವಾರು ಕ್ಯಾಲ್ಕುಲೇಟರ್", "#FFD700")
-    marks_obtained = st.selectbox(colored_text("ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)", "#FFD700", step=0.5))
-    total_marks = st.selectbox(colored_text("ನಿಮ್ಮ ಒಟ್ಟು ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಒಟ್ಟು ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)", "#FFD700", step=0.5))
+    colored_text(
+        "ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಪಡೆದ ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)",
+        "#FFD700"
+    )
+    marks_obtained = st.number_input(
+        "",
+        step=0.5,
+        key="marks_obtained",
+        label_visibility = "collapsed"
+    )
+    colored_text(
+        "ನಿಮ್ಮ ಒಟ್ಟು ಅಂಕಗಳನ್ನು ನೀಡಿ.(ನೀವು ಒಟ್ಟು ಅಂಕಗಳನ್ನು ಲೆಕ್ಕ ಹಾಕಲು ಬಯಸಿದರೆ ನನ್ನ ವೆಬ್‌ಸೈಟ್ ಕ್ವಿಕ್ ಕ್ಯಾಲ್ಕ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.)",
+        "#FFD700"
+    )
+    total_marks = st.number_input(
+        "",
+        step=0.5,
+        key="total_marks",
+        label_visibility = "collapsed"
+    )
 
     if st.button("% ಲೆಕ್ಕಾಚಾರ ಮಾಡಿ"):
-        percentage = marks_obtained / total_marks * 100
-        if percentage < 100 :
-            colored_text(f"ನಿಮ್ಮ ಶೇಕಡಾವಾರು {percentage}%", "#FFD700")
+        if total_marks > 0:
+            percentage = marks_obtained / total_marks * 100
+            if percentage <= 100 :
+                colored_text(f"ನಿಮ್ಮ ಶೇಕಡಾವಾರು {percentage}%", "#FFD700")
+            else:
+                colored_text("ಅಮಾನ್ಯ ಇನ್‌ಪುಟ್","#FFD700")
         else:
-            colored_text("ಅಮಾನ್ಯ ಇನ್‌ಪುಟ್","#FFD700")
+            print("ಒಟ್ಟು ಅಂಕಗಳು 0 ಕ್ಕಿಂತ ಹೆಚ್ಚಿರಬೇಕು.", "#FFD700")
 elif language == "हिंदी":
     colored_text("प्रतिशत कैलकुलेटर", "#FFD700")
-    marks_obtained = st.selectbox(colored_text("अपने प्राप्त अंक बताएं.(अगर आप अपने प्राप्त अंकों की गणना करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)","#FFD700", step=0.5))
-    total_marks = st.selectbox(colored_text("अपने कुल अंक बताएं।.(अगर आप कुल अंक कैलकुलेट करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)","#FFD700", step=0.5))
+    colored_text(
+        "अपने प्राप्त अंक बताएं.(अगर आप अपने प्राप्त अंकों की गणना करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)",
+        "#FFD700"
+    )
+    marks_obtained = st.number_input(
+        "",
+        step=0.5,
+        key="marks_obtained",
+        label_visibility = "collapsed"
+    )
+    colored_text(
+        "अपने कुल अंक बताएं।.(अगर आप कुल अंक कैलकुलेट करना चाहते हैं, तो मेरी वेबसाइट 'Quick Calc' पर जाएँ।)",
+        "#FFD700"
+    )
+    total_marks = st.selectbox(
+        "",
+        step=0.5,
+        key="total_marks",
+        label_visibility = "collapsed"
+    )
 
     if st.button("% गणना"):
-        percentage = marks_obtained / total_marks * 100
-        if percentage < 100 :
-            colored_text(f"आपका प्रतिशत है {percentage}%","#FFD700")
+        if total_marks > 0:
+            percentage = marks_obtained / total_marks * 100
+            if percentage < 100 :
+                colored_text(f"आपका प्रतिशत है {percentage}%","#FFD700")
+            else:
+                colored_text("अमान्य निवेश","#FFD700")
         else:
-            colored_text("अमान्य निवेश","#FFD700")
+            print("कुल अंक 0 से ज़्यादा होने चाहिए.", "#FFD700")
