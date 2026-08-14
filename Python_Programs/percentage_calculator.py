@@ -47,6 +47,7 @@ if language == "English":
     marks_obtained = st.number_input(
         "",
         step=0.5,
+        key="marks_obtained",
         label_visibility = "collapsed"
     )
     colored_text(
@@ -56,6 +57,7 @@ if language == "English":
     total_marks = st.number_input(
         "",
         step=0.5,
+        key="total_marks",
         label_visibility = "collapsed"
     )
     if st.button("% Calculate Percentage") :
